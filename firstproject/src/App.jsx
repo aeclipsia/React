@@ -2,6 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import AddComponentesGuia from "./componentes/AddComponentesGuia";
 import WriteJSX from "./componentes/WriteJSX";
+import ProfileExample from "./componentes/ProfileExample";
+import RenderizadoCondicional from "./componentes/RenderizadoCondicional";
+import RenderizadoDeListas from "./componentes/RenderizadoListas";
 
 function App() {
   const [componenteActivo, setComponenteActivo] = useState(null);
@@ -58,7 +61,6 @@ function App() {
           componentes reutilizables.
         </p>
 
-        {/* Botón para abrir el primer componente */}
         <button
           onClick={() => abrirComponente("apartado1")}
           className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out mb-4"
@@ -66,21 +68,44 @@ function App() {
           1. Cómo crear y anidar un componente
         </button>
         <br />
-        {/* Botón para abrir el segundo componente */}
         <button
           onClick={() => abrirComponente("apartado2")}
-          className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out"
+          className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out mb-4"
         >
           2. Otro componente
         </button>
+        <br />
+        <button
+          onClick={() => abrirComponente("apartado3")}
+          className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out mb-4"
+        >
+          3. Mostrar datos con React
+        </button>
+        <br />
+        <button
+          onClick={() => abrirComponente("apartado4")}
+          className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out mb-4"
+        >
+          4. Renderizado Condicional
+        </button>
+        <br />
+        <button
+          onClick={() => abrirComponente("apartado5")}
+          className="px-6 py-3 text-lg font-semibold text-white bg-black hover:bg-blue-950 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out mb-4"
+        >
+          5. Renderizado de listas
+        </button>
 
-        {/* Condicional para renderizar el primer componente */}
         {componenteActivo === "apartado1" &&
           renderPopup("apartado1", <AddComponentesGuia />)}
-
-        {/* Condicional para renderizar el segundo componente */}
         {componenteActivo === "apartado2" &&
           renderPopup("apartado2", <WriteJSX />)}
+        {componenteActivo === "apartado3" &&
+          renderPopup("apartado3", <ProfileExample />)}
+        {componenteActivo === "apartado4" &&
+          renderPopup("apartado4", <RenderizadoCondicional />)}
+        {componenteActivo === "apartado5" &&
+          renderPopup("apartado5", <RenderizadoDeListas />)}
       </div>
     </>
   );
