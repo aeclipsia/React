@@ -1,0 +1,24 @@
+.pokedex {
+  z-index: -1;
+  margin-top: 7rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+.pokemon-card {
+  background: white; /* Default background */
+  transition: background 0.3s ease; /* Smooth style change */
+}
+
+.pokemon-card.loading {
+  background: #f0f0f0; /* Placeholder */
+}
